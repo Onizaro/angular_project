@@ -1,7 +1,7 @@
 <!-- menu-nav-bar.component.html -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand" routerLink="">Home</a>
 
   <button class="navbar-toggler" type="button" (click)="toggleNavbar()" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,14 +11,14 @@
     <ul class="navbar-nav me-auto">
       <!-- File Dropdown -->
       <li class="nav-item dropdown" ngbDropdown>
-        <a class="nav-link dropdown-toggle" href="#" id="fileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+        <a class="nav-link dropdown-toggle"  id="fileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
           File
         </a>
         <ul class="dropdown-menu" aria-labelledby="fileDropdown" ngbDropdownMenu>
-          <li><a class="dropdown-item" href="#">Explore lessons</a></li>
+          <li><a class="dropdown-item" routerLink="/lesson-search-page">Explore lessons</a></li>
           <li><a class="dropdown-item" href="#">Import...</a></li>
-          <li><a class="dropdown-item" href="#">New...</a></li>
-          <li><a class="dropdown-item" href="#">Export...</a></li>
+          <li><a class="dropdown-item" routerLink="/lesson-edit-form">New...</a></li>
+          <li><a class="dropdown-item" >Export...</a></li>
         </ul>
       </li>
 
@@ -39,7 +39,7 @@
 
       <!-- Help Dropdown -->
       <li class="nav-item dropdown" ngbDropdown>
-        <a class="nav-link dropdown-toggle" href="#" id="helpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+        <a class="nav-link dropdown-toggle"  id="helpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
           Help
         </a>
         <ul class="dropdown-menu" aria-labelledby="helpDropdown" ngbDropdownMenu>
