@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+.border-style {
+  border: solid 1px black;
+  left: 0;
+}
+
+.right-side {
+  display: flex;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+
+}

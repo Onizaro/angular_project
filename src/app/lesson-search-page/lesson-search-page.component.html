@@ -1,0 +1,141 @@
+<div class="container mt-5">
+  <!-- Title -->
+  <h2>Search Lessons</h2>
+
+  <!-- Search Mode Toggle -->
+  <div class="form-group">
+    <label for="searchMode">Search Mode</label>
+    <select class="form-control" id="searchMode" [(ngModel)]="searchMode" (change)="toggleSearchMode()">
+      <option value="basic">Basic Search</option>
+      <option value="advanced">Advanced Search</option>
+    </select>
+  </div>
+
+  <form>
+    <!-- Title Search -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control rounded"
+        id="title"
+        [(ngModel)]="searchCriteria.title"
+        name="title"
+        placeholder="Search by title"
+      />
+    </div>
+
+    <!-- Description Search -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        class="form-control rounded"
+        id="description"
+        [(ngModel)]="searchCriteria.description"
+        name="description"
+        placeholder="Search by description"
+      />
+    </div>
+
+    <!-- Category Search -->
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input
+        type="text"
+        class="form-control rounded"
+        id="category"
+        [(ngModel)]="searchCriteria.category"
+        name="category"
+        placeholder="Search by category"
+      />
+    </div>
+
+    <!-- Level Search -->
+    <div class="form-group">
+      <label for="level">Level</label>
+      <input
+        type="text"
+        class="form-control rounded"
+        id="level"
+        [(ngModel)]="searchCriteria.level"
+        name="level"
+        placeholder="Search by level"
+      />
+    </div>
+
+    <!-- Tags Search -->
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <input
+        type="text"
+        class="form-control rounded"
+        id="tags"
+        [(ngModel)]="searchCriteria.tags"
+        name="tags"
+        placeholder="Search by tags"
+      />
+    </div>
+
+    <!-- Author Search -->
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input
+        type="text"
+        class="form-control rounded"
+        id="author"
+        [(ngModel)]="searchCriteria.author"
+        name="author"
+        placeholder="Search by author"
+      />
+    </div>
+
+    <!-- Last Modified Date Range Search (Advanced Mode) -->
+    <div *ngIf="searchMode === 'advanced'" class="form-group">
+      <label for="lastModifiedDate">Last Modified Date</label>
+      <div class="d-flex">
+        <input
+          type="date"
+          class="form-control rounded mr-2"
+          id="startDate"
+          [(ngModel)]="searchCriteria.startDate"
+          name="startDate"
+        />
+        <span class="mx-2">to</span>
+        <input
+          type="date"
+          class="form-control rounded ml-2"
+          id="endDate"
+          [(ngModel)]="searchCriteria.endDate"
+          name="endDate"
+        />
+      </div>
+    </div>
+
+    <!-- Min-Max Range for Numerical Search (Advanced Mode) -->
+    <div *ngIf="searchMode === 'advanced'" class="form-group">
+      <label for="numericalRange">Numerical Range</label>
+      <div class="d-flex">
+        <input
+          type="number"
+          class="form-control rounded mr-2"
+          id="minValue"
+          [(ngModel)]="searchCriteria.minValue"
+          name="minValue"
+          placeholder="Min Value"
+        />
+        <input
+          type="number"
+          class="form-control rounded ml-2"
+          id="maxValue"
+          [(ngModel)]="searchCriteria.maxValue"
+          name="maxValue"
+          placeholder="Max Value"
+        />
+      </div>
+    </div>
+
+    <!-- Search Button -->
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
+  </form>
+</div>
