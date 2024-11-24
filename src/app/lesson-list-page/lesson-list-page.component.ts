@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserSettingsService } from '../user-settings.service';
 
 @Component({
   selector: 'app-lesson-list-page',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './lesson-list-page.component.css'
 })
 export class LessonListPageComponent {
-
+  constructor(private userSettingsService: UserSettingsService) {
+    console.log('Dernier ID de leçon:', this.userSettingsService.lastLessonId);
+  }
 }

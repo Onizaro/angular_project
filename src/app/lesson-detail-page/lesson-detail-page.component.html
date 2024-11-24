@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <h1>Lesson Detail</h1>
+  <p><strong>Initial ID:</strong> {{ initialId }}</p>
+  <p><strong>Current ID:</strong> {{ id }}</p>
+
+  <div class="d-flex justify-content-between mt-3">
+    <!-- Bouton Previous -->
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="onClickGoPreviousPage()"
+      [disabled]="id === 1">
+      Previous
+    </button>
+
+    <!-- Bouton Next -->
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="onClickGoNextPage()">
+      Next
+    </button>
+  </div>
+</div>

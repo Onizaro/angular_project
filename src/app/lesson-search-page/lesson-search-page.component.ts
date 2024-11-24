@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {Router} from "@angular/router";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lesson-search-page',
   templateUrl: './lesson-search-page.component.html',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   styleUrls: ['./lesson-search-page.component.css']
 })
@@ -46,6 +48,7 @@ export class LessonSearchPageComponent {
       this.searchCriteria.maxValue = null;
     }
   }
+
 
 
 }

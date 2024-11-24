@@ -1,66 +1,66 @@
-<div class="container">
-  <h2>Edit lesson</h2>
-  <div class="row">
-    <div class="col-md-3">
-      <label for="title">Title:</label>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="title" placeholder="Enter title">
-    </div>
+<div class="container" [formGroup]="lessonForm">
+  <div class="row mt-2">
+    <label class="col-md-1" for="title"
+           [class.text-danger]="lessonForm.get('title')?.invalid && lessonForm.get('title')?.touched">
+      Title
+    </label>
+    <input id="title" type="text" class="col-md-5" formControlName="title" name="title">
   </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <label for="description">Description:</label>
-    </div>
-    <div class="col-md-9">
-      <textarea class="form-control" id="description" placeholder="Enter description" rows="3"></textarea>
-    </div>
+  <div class="row mt-2">
+    <label class="col-md-1" for="description"
+           [class.text-danger]="lessonForm.get('description')?.invalid && lessonForm.get('description')?.touched">
+      Description
+    </label>
+    <textarea id="description" class="col-11" rows="4" formControlName="description" name="description"></textarea>
   </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <label for="category">Category:</label>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="category" placeholder="Enter category">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <label for="level">Level:</label>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="level" placeholder="Enter level">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <label for="prerequisite">Prerequisite:</label>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="prerequisite" placeholder="Enter prerequisites (comma separated)">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <label for="tags">Tags:</label>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="tags" placeholder="Enter tags (comma separated)">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <label for="copyright">Copyright:</label>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="copyright" placeholder="Enter copyright information">
-    </div>
-  </div>
+  <div class="row mt-2">
+    <label class="col-md-1" for="category"
+           [class.text-danger]="lessonForm.get('category')?.invalid && lessonForm.get('category')?.touched">
+      Category
+    </label>
+    <input id="category" type="text" class="col-md-2" formControlName="category" name="category">
 
-  <div class="row mt-4">
-    <div class="col-md-12 text-center">
-      <button type="button" class="btn btn-primary" (click)="onClickSubmit()">Save</button>
+    <label class="col-md-1" for="level"
+           ngbTooltip="Enter value between 1 (basics) to 10 (advanced)" placement="top"
+           [class.text-danger]="lessonForm.get('level')?.invalid && lessonForm.get('level')?.touched">
+      Level
+    </label>
+    <input id="level" type="number" class="col-md-1" min="1" max="10" formControlName="level" name="level">
+
+    <label class="col-md-1" for="prerequisites"
+           [class.text-danger]="lessonForm.get('prerequisite')?.invalid && lessonForm.get('prerequisite')?.touched">
+      Prerequisite
+    </label>
+    <input id="prerequisites" type="text" class="col-md-6" formControlName="prerequisite" name="prerequisite">
+  </div>
+  <div class="row mt-2">
+    <label class="col-md-1" for="tags"
+           ngbTooltip="Enter tags, separated by commas" placement="top"
+           [class.text-danger]="lessonForm.get('tags')?.invalid && lessonForm.get('tags')?.touched">
+      Tags
+    </label>
+    <input id="tags" type="text" class="col-md-11" placeholder="Enter tags" formControlName="tags" name="tags">
+  </div>
+  <div class="row mt-1">
+    <label class="col-md-1" for="license"
+           [class.text-danger]="lessonForm.get('copyright')?.invalid && lessonForm.get('copyright')?.touched">
+      License
+    </label>
+    <input id="license" type="text" class="col-md-5" formControlName="copyright" name="copyright">
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+      <button disabled="true" class="btn btn-primary" [routerLink]="['/lesson', 1234]">
+        Detail for lesson 1234
+      </button>
+    </div>
+    <div class="row mt-2">
+      <label class="col-md-2"></label>
+      <button type="button" class="btn btn-primary col-md-2"
+              (click)="onSubmit()"
+              [disabled]="!lessonForm.valid">Submit</button>
+      <span *ngIf="lessonForm.invalid" class="col-md-8 text-danger">Please fill out all required fields.</span>
     </div>
   </div>
 </div>
-
