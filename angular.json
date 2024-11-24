@@ -64,7 +64,8 @@
               "buildTarget": "td3:build:production"
             },
             "development": {
-              "buildTarget": "td3:build:development"
+              "buildTarget": "td3:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./lesson-detail-page.component.css']
 })
 export class LessonDetailPageComponent {
-  readonly initialId: number; // ID initial pris du snapshot
-  id: number | undefined; // ID actuel
+  readonly initialId: number; 
+  id: number | undefined; 
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     // Obtenir l'ID initial depuis le snapshot
@@ -25,15 +25,13 @@ export class LessonDetailPageComponent {
     });
   }
 
-  // Naviguer vers l'ID suivant
   onClickGoNextPage() {
     const nextId = this.id ? this.id + 1 : 1;
     this.router.navigate(['/lesson', nextId]);
   }
-
-  // Naviguer vers l'ID précédent
+  
   onClickGoPreviousPage() {
-    const prevId = this.id && this.id > 1 ? this.id - 1 : 1; // Évite un ID négatif
+    const prevId = this.id && this.id > 1 ? this.id - 1 : 1; 
     this.router.navigate(['/lesson', prevId]);
   }
 }

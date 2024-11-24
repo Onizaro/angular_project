@@ -1,4 +1,5 @@
 <div class="container" [formGroup]="lessonForm">
+  <h2>Edit Lessons</h2>
   <div class="row mt-2">
     <label class="col-md-1" for="title"
            [class.text-danger]="lessonForm.get('title')?.invalid && lessonForm.get('title')?.touched">

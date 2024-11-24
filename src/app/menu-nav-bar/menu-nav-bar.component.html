@@ -1,5 +1,3 @@
-<!-- menu-nav-bar.component.html -->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
   <a class="navbar-brand" routerLink="">Home</a>
 
@@ -9,56 +7,27 @@
 
   <div class="collapse navbar-collapse" [ngClass]="{'show': !isCollapsed}" id="navbarNav">
     <ul class="navbar-nav me-auto">
-      <!-- File Dropdown -->
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle"  id="fileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
           File
         </a>
         <ul class="dropdown-menu" aria-labelledby="fileDropdown" ngbDropdownMenu>
-          <li><a class="dropdown-item" routerLink="/lesson-search-page">Explore lessons</a></li>
-          <li><a class="dropdown-item" href="#">Import...</a></li>
-          <li><a class="dropdown-item" routerLink="/lesson-edit-form">New...</a></li>
-          <li><a class="dropdown-item" >Export...</a></li>
+          <li><a class="dropdown-item" routerLink="/lesson-search-page">Search Lesson</a></li>
+          <li><a class="dropdown-item" routerLink="/lesson-edit-form">Lesson Edit</a></li>
           <a class="dropdown-item" routerLink="/test-page1">Test Page1</a>
-
         </ul>
       </li>
-
-      <!-- Study Now Menu Item -->
       <li class="nav-item">
-        <a class="nav-link" href="#">Study Now</a>
-      </li>
-
-      <!-- Progresses Statistics Menu Item -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">Progresses Statistics</a>
-      </li>
-
-      <!-- Achievements Menu Item -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">Achievements</a>
-      </li>
-
-      <!-- Help Dropdown -->
-      <li class="nav-item dropdown" ngbDropdown>
-        <a class="nav-link dropdown-toggle"  id="helpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
-          Help
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="helpDropdown" ngbDropdownMenu>
-          <li><a class="dropdown-item" href="#">Glossary</a></li>
-          <li><a class="dropdown-item" href="#">Documentation</a></li>
-          <li><a class="dropdown-item" href="#">About</a></li>
-        </ul>
+        <a class="nav-link" routerLink="/todos">Todos</a>
       </li>
     </ul>
 
-    <!-- Profile Dropdown on the right -->
     <ul class="navbar-nav ms-auto">
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
           Profile
         </a>
-        <ul class="dropdown-menu" aria-labelledby="profileDropdown" ngbDropdownMenu>
+        <ul class="dropdown-menu" aria-labelledby="profileDropdown" ngbDropdownMenu> <!-- not implemented yet -->
           <li><a class="dropdown-item" href="#">Logout</a></li>
           <li><a class="dropdown-item" href="#">Login</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>

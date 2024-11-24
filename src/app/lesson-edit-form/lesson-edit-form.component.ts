@@ -38,8 +38,6 @@ export class LessonEditFormComponent {
     }
   }
 
-
-  // Déclarer le modèle qui sera lié aux champs de formulaire
   model: LessonPackage = {
     title: '',
     description: '',
@@ -50,9 +48,8 @@ export class LessonEditFormComponent {
     copyright: ''
   };
 
-  // Méthode de soumission du formulaire
   onClickSubmit() {
     console.log('Form values to save to server', this.model);
-    // Vous pouvez envoyer `this.model` au serveur via un service
+    
   }
 }
