@@ -31,24 +31,4 @@ export class LessonSearchPageComponent {
     maxValue: null
   };
 
-  // Toggle between basic and advanced search
-  toggleSearchMode() {
-    // If the user switches to advanced search mode, we can initialize or reset values for advanced fields.
-    if (this.searchMode === 'advanced') {
-      // Example: reset the values when switching to advanced search mode (optional)
-      this.searchCriteria.startDate = '';
-      this.searchCriteria.endDate = '';
-      this.searchCriteria.minValue = null;
-      this.searchCriteria.maxValue = null;
-    } else {
-      // Optionally, clear advanced search fields when switching to basic mode
-      this.searchCriteria.startDate = '';
-      this.searchCriteria.endDate = '';
-      this.searchCriteria.minValue = null;
-      this.searchCriteria.maxValue = null;
-    }
-  }
-
-
-
 }
