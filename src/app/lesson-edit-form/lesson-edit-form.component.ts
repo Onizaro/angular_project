@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UserSettingsService } from '../user-settings.service';
-import { LessonPackage } from './lesson-package.model';  // Assurez-vous d'importer votre modèle
+import { LessonPackage } from './lesson-package.model';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common'
@@ -11,7 +11,7 @@ import {CommonModule} from '@angular/common'
 @Component({
   selector: 'app-lesson-edit-form',
   standalone: true,
-  imports: [FormsModule, RouterLink, ReactiveFormsModule, CommonModule],  // Importation du module FormsModule pour utiliser ngModel
+  imports: [FormsModule, RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './lesson-edit-form.component.html',
   styleUrls: ['./lesson-edit-form.component.css']
 })
@@ -50,6 +50,6 @@ export class LessonEditFormComponent {
 
   onClickSubmit() {
     console.log('Form values to save to server', this.model);
-    
+
   }
 }
